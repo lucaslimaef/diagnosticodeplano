@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Por que você parou de evoluir · Diagnóstico de platô</title>
+<meta name="description" content="Diagnóstico rápido: os 5 motivos mais comuns de travar no treino e parar de evoluir. Leitura de 5 minutos. Descubra onde está o seu freio." />
+<meta name="theme-color" content="#0d1117" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📉</text></svg>" />
+
+<meta property="og:title" content="Por que você parou de evoluir (e não é falta de esforço)" />
+<meta property="og:description" content="Os 5 motivos mais comuns de travar no treino. Diagnóstico de 5 minutos." />
+<meta property="og:type" content="article" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+<!-- Meta Pixel: Pixel Performix -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '264800457918824');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=264800457918824&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
+
+<style>
+  :root{
+    --bg:#0d1117;
+    --surface:#161b22;
+    --surface-2:#1c222b;
+    --border:#30363d;
+    --border-hover:#484f58;
+    --text:#e6edf3;
+    --muted:#8b949e;
+    --muted-2:#6e7681;
+    --accent:#a855f7;
+    --accent-soft:rgba(168,85,247,.12);
+    --accent-border:rgba(168,85,247,.35);
+    --lemon:#f4d03f;
+    --success:#4ade80;
+    --success-soft:rgba(74,222,128,.10);
+    --success-border:rgba(74,222,128,.30);
+    --danger:#f43f5e;
+    --danger-soft:rgba(244,63,94,.08);
+    --danger-border:rgba(244,63,94,.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    min-height:100vh;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+
+  main.wrap{
+    width:100%;
+    max-width:720px;
+    margin:0 auto;
+    padding:48px 22px 80px;
+  }
+
+  /* HERO */
+  .hero{margin-bottom:56px}
+  .eyebrow{
+    display:inline-block;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    color:var(--muted);
+    background:var(--surface);
+    border:1px solid var(--border);
+    padding:6px 12px;
+    border-radius:999px;
+    margin-bottom:20px;
+  }
+  .hero h1{
+    font-size:clamp(28px,5.2vw,42px);
+    font-weight:900;
+    line-height:1.15;
+    letter-spacing:-1px;
+    margin-bottom:18px;
+    color:var(--text);
+  }
+  .hero .lead{
+    font-size:17px;
+    color:var(--muted);
+    line-height:1.65;
+    max-width:620px;
+  }
+
+  /* TOC */
+  .toc{
+    margin-top:28px;
+    padding:18px 20px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+  }
+  .toc .toc-title{
+    font-size:11.5px;
+    font-weight:700;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    color:var(--muted-2);
+    margin-bottom:12px;
+  }
+  .toc ol{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .toc ol li{font-size:14.5px}
+  .toc ol li a{color:var(--text);border-bottom:1px solid transparent;transition:border-color .15s,color .15s}
+  .toc ol li a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  .toc ol li .num{color:var(--muted-2);margin-right:10px;font-variant-numeric:tabular-nums}
+
+  /* SECTIONS */
+  section{margin-bottom:48px}
+  section > h2{
+    font-size:24px;
+    font-weight:800;
+    letter-spacing:-.4px;
+    margin-bottom:16px;
+    color:var(--text);
+  }
+  section > p{font-size:15.5px;color:var(--muted);margin-bottom:14px}
+  section > p b{color:var(--text);font-weight:600}
+
+  .bullets{display:flex;flex-direction:column;gap:10px;margin:14px 0}
+  .bullets li{
+    list-style:none;
+    font-size:15px;
+    color:var(--muted);
+    padding-left:22px;
+    position:relative;
+    line-height:1.6;
+  }
+  .bullets li::before{
+    content:"";
+    position:absolute;
+    left:6px;top:11px;
+    width:6px;height:6px;
+    background:var(--accent);
+    border-radius:50%;
+  }
+
+  .disclaimer{
+    margin-top:18px;
+    font-size:13.5px;
+    color:var(--muted-2);
+    background:var(--surface);
+    border-left:3px solid var(--border-hover);
+    padding:12px 16px;
+    border-radius:4px;
+    line-height:1.55;
+  }
+
+  /* MOTIVO CARD */
+  .exercise{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:28px 26px;
+    margin-bottom:24px;
+    transition:border-color .2s;
+  }
+  .exercise:hover{border-color:var(--border-hover)}
+  .exercise h3{
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:-.3px;
+    margin-bottom:14px;
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .exercise h3 .ord{
+    font-size:13px;
+    font-weight:700;
+    color:var(--accent);
+    background:var(--accent-soft);
+    border:1px solid var(--accent-border);
+    padding:3px 9px;
+    border-radius:6px;
+    letter-spacing:.5px;
+  }
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .chip{
+    font-size:12px;
+    font-weight:600;
+    padding:4px 10px;
+    border-radius:6px;
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    color:var(--muted);
+  }
+  .chip.focus{
+    background:var(--accent-soft);
+    border-color:var(--accent-border);
+    color:#d4b3ff;
+  }
+
+  .exercise > p{font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:8px}
+  .exercise > p b{color:var(--text);font-weight:600}
+
+  .callout{
+    border-radius:8px;
+    padding:12px 14px;
+    font-size:14px;
+    line-height:1.55;
+    margin-top:14px;
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  .callout .ico{font-weight:900;font-size:14px;line-height:1.55;flex-shrink:0}
+  /* autodiagnóstico — roxo (marca) */
+  .callout.mark{
+    background:var(--accent-soft);
+    border:1px solid var(--accent-border);
+    color:#d4b3ff;
+  }
+  .callout.mark .ico{color:var(--accent)}
+  .callout.mark b{color:#ede9fe}
+
+  /* APLICAR */
+  .apply{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:24px 26px;
+  }
+  .apply p{font-size:15px;color:var(--muted);margin-bottom:10px;line-height:1.65}
+  .apply p:last-child{margin-bottom:0}
+  .apply b{color:var(--text);font-weight:600}
+
+  /* REVELAÇÃO */
+  .reveal{
+    margin-top:64px;
+    padding-top:48px;
+    border-top:1px solid var(--border);
+  }
+  .reveal h2{
+    font-size:22px;
+    font-weight:800;
+    margin-bottom:14px;
+    color:var(--text);
+  }
+  .reveal p{
+    font-size:15.5px;
+    color:var(--muted);
+    line-height:1.7;
+    margin-bottom:14px;
+  }
+  .reveal p:last-of-type{margin-bottom:0}
+  .reveal b{color:var(--text);font-weight:600}
+  .reveal a.ig{
+    color:var(--accent);
+    border-bottom:1px solid rgba(168,85,247,.4);
+    transition:border-color .15s;
+  }
+  .reveal a.ig:hover{border-bottom-color:var(--accent)}
+
+  /* OFFER — CONSULTORIA */
+  .offer{
+    margin-top:40px;
+    background:linear-gradient(135deg,rgba(168,85,247,.14),rgba(168,85,247,.04));
+    border:1.5px solid var(--accent-border);
+    border-radius:16px;
+    padding:32px 28px;
+  }
+  .offer .offer-eyebrow{
+    display:inline-block;
+    font-size:11.5px;
+    font-weight:800;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+    color:var(--lemon);
+    margin-bottom:12px;
+  }
+  .offer h2{
+    font-size:clamp(22px,3.5vw,28px);
+    font-weight:900;
+    line-height:1.2;
+    letter-spacing:-.5px;
+    margin-bottom:18px;
+    color:var(--text);
+  }
+  .offer ul.benefits{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:24px;
+  }
+  .offer ul.benefits li{
+    font-size:14.5px;
+    color:var(--muted);
+    padding-left:26px;
+    position:relative;
+    line-height:1.5;
+  }
+  .offer ul.benefits li::before{
+    content:"✓";
+    position:absolute;
+    left:0;top:0;
+    color:var(--success);
+    font-weight:800;
+    font-size:14px;
+  }
+  .offer ul.benefits li b{color:var(--text);font-weight:600}
+
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:linear-gradient(135deg,var(--accent) 0%,#c026d3 100%);
+    color:#fff;
+    font-size:16px;
+    font-weight:800;
+    letter-spacing:.2px;
+    padding:16px 28px;
+    border-radius:999px;
+    box-shadow:0 8px 28px rgba(168,85,247,.30);
+    transition:transform .15s,box-shadow .15s;
+    text-decoration:none;
+  }
+  .cta:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 36px rgba(168,85,247,.45);
+  }
+  .cta .arrow{font-size:18px;line-height:1}
+
+  .cta-sub{
+    margin-top:14px;
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.6;
+  }
+  .cta-sub a{color:var(--accent);border-bottom:1px solid rgba(168,85,247,.4)}
+  .cta-sub a:hover{border-bottom-color:var(--accent)}
+
+  /* MINI-OFFER — TREINO EXPRESS */
+  .mini-offer{
+    margin-top:22px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:22px 24px;
+  }
+  .mini-offer .mini-eyebrow{
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    color:var(--muted-2);
+    margin-bottom:10px;
+  }
+  .mini-offer h3{font-size:18px;font-weight:800;color:var(--text);margin-bottom:8px;letter-spacing:-.2px}
+  .mini-offer p{font-size:14.5px;color:var(--muted);line-height:1.6;margin-bottom:16px}
+  .mini-offer p b{color:var(--text);font-weight:600}
+  .mini-offer .price-tag{color:var(--lemon);font-weight:800}
+  .mini-cta{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:14.5px;
+    font-weight:700;
+    color:var(--accent);
+    border:1px solid var(--accent-border);
+    background:var(--accent-soft);
+    padding:11px 20px;
+    border-radius:999px;
+    transition:background .15s,border-color .15s;
+  }
+  .mini-cta:hover{background:rgba(168,85,247,.18);border-color:var(--accent)}
+
+  /* PS */
+  .ps{
+    margin-top:36px;
+    background:var(--surface);
+    border-left:3px solid var(--accent);
+    border-radius:6px;
+    padding:20px 22px;
+    font-size:14.5px;
+    color:var(--muted);
+    line-height:1.7;
+  }
+  .ps .ps-label{
+    color:var(--accent);
+    font-weight:900;
+    letter-spacing:.4px;
+    text-transform:uppercase;
+    font-size:11.5px;
+    margin-right:6px;
+  }
+  .ps b{color:var(--text);font-weight:600}
+  .ps a{color:var(--accent);font-weight:600;border-bottom:1px solid rgba(168,85,247,.4)}
+  .ps a:hover{border-bottom-color:var(--accent)}
+
+  /* FOOTER */
+  footer{
+    margin-top:56px;
+    padding-top:24px;
+    border-top:1px solid var(--border);
+    font-size:13px;
+    color:var(--muted-2);
+    text-align:center;
+    line-height:1.7;
+  }
+  footer a{color:var(--muted)}
+  footer a:hover{color:var(--accent)}
+
+  @media (max-width:560px){
+    main.wrap{padding:32px 18px 64px}
+    .exercise{padding:24px 20px}
+    .offer{padding:26px 22px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{transition-duration:.01s!important}
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- HERO -->
+    <header class="hero">
+      <span class="eyebrow">Diagnóstico de platô · leitura de 5 min</span>
+      <h1>Por que você parou de evoluir (e não é falta de esforço)</h1>
+      <p class="lead">
+        Treinar pesado e não ver mais resultado não é azar nem genética ruim. Quase sempre é um de 5 pontos que travaram sem você perceber. Lê cada um e marca mentalmente onde você se reconhece — na maioria das pessoas são 1 ou 2.
+      </p>
+
+      <nav class="toc" aria-label="Índice dos motivos">
+        <div class="toc-title">Os 5 motivos mais comuns</div>
+        <ol>
+          <li><a href="#m1"><span class="num">01</span>Você não aumenta a carga</a></li>
+          <li><a href="#m2"><span class="num">02</span>Volume e frequência fora do ponto</a></li>
+          <li><a href="#m3"><span class="num">03</span>Recuperação: sono e estresse</a></li>
+          <li><a href="#m4"><span class="num">04</span>Comida abaixo do que o corpo precisa</a></li>
+          <li><a href="#m5"><span class="num">05</span>Execução que tira o estímulo do músculo certo</a></li>
+        </ol>
+      </nav>
+    </header>
+
+    <!-- CONTEXTO -->
+    <section>
+      <h2>O que é um platô (e por que ele aparece)</h2>
+      <p>
+        Platô é o corpo dizendo que o estímulo virou rotina. Ele <b>já se adaptou ao que você faz</b>, então parou de mudar. Não é sinal de que você chegou no limite — é sinal de que algo precisa mudar no estímulo.
+      </p>
+      <p>
+        A boa notícia: platô tem causa, e causa tem conserto. O problema é que a maioria tenta resolver treinando <b>mais</b> quando o erro está em <b>outro lugar</b> — recuperação, comida ou execução.
+      </p>
+      <ul class="bullets">
+        <li>Mesmo peso e mesmas reps há meses → o corpo não tem motivo pra evoluir.</li>
+        <li>Cansaço constante e sem ganho → quase sempre é recuperação, não falta de treino.</li>
+        <li>"Treino certinho mas não cresço" → costuma ser comida ou execução vazando o estímulo.</li>
+      </ul>
+      <div class="disclaimer">
+        Este é um diagnóstico geral pra te dar direção, não uma avaliação individual. Onde mais de um ponto se aplica, a ordem de prioridade muda de pessoa pra pessoa — e é isso que dá pra olhar de perto.
+      </div>
+    </section>
+
+    <!-- MOTIVO 1 -->
+    <section id="m1" class="exercise">
+      <h3><span class="ord">01</span>Você não aumenta a carga</h3>
+      <div class="chips">
+        <span class="chip focus">Sobrecarga progressiva</span>
+        <span class="chip">Causa nº 1 de platô</span>
+      </div>
+      <p>O músculo só cresce se for obrigado a fazer mais do que já faz. Se você levanta o mesmo peso, nas mesmas repetições, há semanas ou meses, ele não tem nenhum motivo pra mudar. Evoluir é deixar o treino um pouco mais difícil ao longo do tempo — mais carga, mais reps ou melhor execução.</p>
+      <div class="callout mark">
+        <span class="ico">→</span>
+        <div><b>É o teu caso se:</b> você não anota o treino, "acha" que está progredindo, e levanta o mesmo peso de sempre sem suar nas últimas repetições.</div>
+      </div>
+    </section>
+
+    <!-- MOTIVO 2 -->
+    <section id="m2" class="exercise">
+      <h3><span class="ord">02</span>Volume e frequência fora do ponto</h3>
+      <div class="chips">
+        <span class="chip focus">Dose de treino</span>
+        <span class="chip">Pouco ou demais</span>
+      </div>
+      <p>Treino de menos não estimula o suficiente; treino demais sem recuperar também trava — os dois extremos param o resultado. O ponto certo é o que te deixa progredir semana após semana sem viver quebrado. Mais treino nem sempre é mais resultado.</p>
+      <div class="callout mark">
+        <span class="ico">→</span>
+        <div><b>É o teu caso se:</b> você treina o mesmo grupo só 1x por semana esperando muito, OU vive dolorido, cansado e sem evolução de tanto treinar.</div>
+      </div>
+    </section>
+
+    <!-- MOTIVO 3 -->
+    <section id="m3" class="exercise">
+      <h3><span class="ord">03</span>Recuperação: sono e estresse</h3>
+      <div class="chips">
+        <span class="chip focus">Descanso</span>
+        <span class="chip">O ponto mais ignorado</span>
+      </div>
+      <p>Músculo não cresce na academia, cresce no descanso. Dormir mal e viver no estresse derruba o hormônio que constrói e atrapalha o ganho mesmo com o treino perfeito. Se a recuperação está furada, qualquer treino rende menos do que poderia.</p>
+      <div class="callout mark">
+        <span class="ico">→</span>
+        <div><b>É o teu caso se:</b> você dorme menos de 6 a 7 horas, acorda cansado, e a rotina é corrida e estressante o dia inteiro.</div>
+      </div>
+    </section>
+
+    <!-- MOTIVO 4 -->
+    <section id="m4" class="exercise">
+      <h3><span class="ord">04</span>Comida abaixo do que o corpo precisa</h3>
+      <div class="chips">
+        <span class="chip focus">Nutrição</span>
+        <span class="chip">Matéria-prima</span>
+      </div>
+      <p>Sem matéria-prima — principalmente proteína — não tem o que construir. "Comer bem" no olho quase nunca bate o que o corpo realmente precisa pra crescer ou pra secar mantendo músculo. Treino é o estímulo; comida é o que vira resultado.</p>
+      <div class="callout mark">
+        <span class="ico">→</span>
+        <div><b>É o teu caso se:</b> você nunca contou a proteína do dia, come pouco no dia a dia, ou pula refeição e compensa tudo à noite.</div>
+      </div>
+    </section>
+
+    <!-- MOTIVO 5 -->
+    <section id="m5" class="exercise">
+      <h3><span class="ord">05</span>Execução que tira o estímulo do músculo certo</h3>
+      <div class="chips">
+        <span class="chip focus">Técnica</span>
+        <span class="chip">Estímulo que vaza</span>
+      </div>
+      <p>Amplitude curta e impulso fazem você levantar o peso sem o músculo-alvo trabalhar de verdade. Parece treino pesado, mas o estímulo vaza pra articulação e pra outros músculos. Carga grande com execução ruim cresce o ego, não o músculo.</p>
+      <div class="callout mark">
+        <span class="ico">→</span>
+        <div><b>É o teu caso se:</b> você usa balanço pra subir a carga, faz movimento curto, ou sente o exercício "no lugar errado".</div>
+      </div>
+    </section>
+
+    <!-- APLICAR -->
+    <section>
+      <h2>O que fazer com isso agora</h2>
+      <div class="apply">
+        <p><b>Não tenta consertar os 5 de uma vez.</b> Pega o ponto que mais bateu em você, ajusta por 2 a 3 semanas e observa o que acontece.</p>
+        <p>Na maioria das pessoas, <b>destravar 1 ponto já volta a mover o ponteiro</b>. O difícil não é saber que existem esses 5 — é acertar qual é o teu freio principal hoje e em que ordem mexer.</p>
+        <p>Se você se reconheceu em 3 ou mais, provavelmente não é um ajuste solto que resolve, e sim <b>organizar o conjunto</b>: treino, recuperação e comida puxando pro mesmo lado.</p>
+      </div>
+    </section>
+
+    <!-- REVELAÇÃO -->
+    <section class="reveal">
+      <h2>Quem escreveu isso?</h2>
+      <p>
+        Sou <b>Lucas Lima</b>, personal trainer. Passo o dia ajudando aluno a sair exatamente desse ponto: o treino que era pra evoluir e empacou.
+      </p>
+      <p>
+        Esse diagnóstico aqui é a versão rápida — serve pra te dar direção. Quando a gente olha o teu caso de verdade, com os teus números, o teu treino e a tua rotina, dá pra apontar com precisão <b>qual ponto está te travando</b> e montar a saída na ordem certa, sem chute.
+      </p>
+      <p>
+        Pra ver o que mais faço: <a class="ig" href="https://instagram.com/personaltrainerlucaslima" target="_blank" rel="noopener">@personaltrainerlucaslima</a>.
+      </p>
+    </section>
+
+    <!-- OFFER — CONSULTORIA -->
+    <section class="offer">
+      <span class="offer-eyebrow">O próximo passo</span>
+      <h2>É exatamente isso que eu faço na consultoria</h2>
+
+      <ul class="benefits">
+        <li><b>Avaliação do teu treino, rotina e alimentação</b> pra achar o que realmente está travando — não no chute.</li>
+        <li><b>Treino montado pro teu nível</b>, objetivo e tempo real de vida.</li>
+        <li><b>Ajuste contínuo mês a mês</b> conforme você evolui — pra você não empacar de novo no mesmo ponto.</li>
+        <li><b>Acompanhamento direto comigo.</b> Não é planilha solta nem app genérico.</li>
+      </ul>
+
+      <a class="cta" href="https://ptlucaslima.pt/#consultoria" target="_blank" rel="noopener">
+        <span>Quero destravar na consultoria</span>
+        <span class="arrow">→</span>
+      </a>
+      <p class="cta-sub">
+        Amanhã eu mostro a <b>consultoria por dentro</b> aqui no Instagram — fica de olho.
+      </p>
+    </section>
+
+    <!-- MINI-OFFER — TREINO EXPRESS -->
+    <div class="mini-offer">
+      <div class="mini-eyebrow">Quer começar mais leve?</div>
+      <h3>Treino Express · <span class="price-tag">€7</span></h3>
+      <p>Um treino pronto, feito por mim a partir de um formulário curto, pra você <b>sair do zero e voltar a sentir progresso essa semana</b>. Pagamento único, sem mensalidade. Boa porta de entrada antes da consultoria.</p>
+      <a class="mini-cta" href="https://buy.stripe.com/9B67sN9W5ceNaW4aNw08g00?ref=diagnosticodeplano" target="_blank" rel="noopener">
+        Quero o Treino Express · €7 →
+      </a>
+    </div>
+
+    <!-- PS — CONSULTORIA -->
+    <div class="ps">
+      <span class="ps-label">PS</span>
+      A consultoria tem <b>vaga limitada por mês</b> pra eu conseguir acompanhar cada aluno de perto. Se amanhã, quando eu mostrar tudo por dentro, fizer sentido pra você — já vai estar por dentro e na frente. <a href="https://ptlucaslima.pt/#consultoria" target="_blank" rel="noopener">Ver a consultoria →</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      © Lucas Lima · <a href="https://ptlucaslima.pt" target="_blank" rel="noopener">ptlucaslima.pt</a> · <a href="https://instagram.com/personaltrainerlucaslima" target="_blank" rel="noopener">@personaltrainerlucaslima</a>
+    </footer>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# diagnosticodeplano
+
+Quick self-diagnosis guide: the 5 most common reasons people plateau in training.
+Static page served via GitHub Pages.
+
+Live: https://lucaslimaef.github.io/diagnosticodeplano/
