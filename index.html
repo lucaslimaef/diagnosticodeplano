@@ -303,6 +303,23 @@ src="https://www.facebook.com/tr?id=264800457918824&ev=PageView&noscript=1"/></n
   .cta-sub{margin-top:16px;font-size:13.5px;color:var(--muted);line-height:1.6}
   .cta-sub b{color:var(--ink)}
 
+  /* COMPARE — sozinho x consultoria */
+  .offer .offer-intro{font-size:15.5px;color:var(--ink-2);line-height:1.62;margin-bottom:22px}
+  .offer .offer-intro b{color:var(--ink);font-weight:700}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:26px}
+  .compare .col{border-radius:16px;padding:18px}
+  .compare .col-now{background:var(--bg-2);border:1px solid var(--line)}
+  .compare .col-cons{background:linear-gradient(165deg,#f3ecff,#ffffff);border:1.5px solid var(--accent);box-shadow:var(--shadow-sm)}
+  .compare .col-h{display:block;font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;margin-bottom:13px}
+  .compare .col-now .col-h{color:var(--muted)}
+  .compare .col-cons .col-h{color:var(--accent)}
+  .compare ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .compare li{font-size:13.5px;line-height:1.5;color:var(--ink-2);padding-left:24px;position:relative}
+  .compare .col-now li::before{content:"✕";position:absolute;left:0;top:0;color:var(--coral);font-weight:800;font-size:12px}
+  .compare .col-cons li{color:var(--ink);font-weight:500}
+  .compare .col-cons li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green);font-weight:800;font-size:12px}
+  @media (max-width:560px){.compare{grid-template-columns:1fr}}
+
   /* MINI OFFER — TREINO EXPRESS */
   .mini{
     margin-top:20px;background:var(--card);border:1px solid var(--line);
@@ -354,7 +371,7 @@ src="https://www.facebook.com/tr?id=264800457918824&ev=PageView&noscript=1"/></n
   <div class="progress" id="progress"></div>
   <button class="scorepill" id="scorepill" aria-label="Ver o seu resultado">
     <span class="dot" id="pillDot">0</span>
-    <span>marcados — ver resultado</span>
+    <span>marcados · ver resultado</span>
   </button>
 
   <main class="wrap">
@@ -364,7 +381,7 @@ src="https://www.facebook.com/tr?id=264800457918824&ev=PageView&noscript=1"/></n
       <span class="eyebrow"><span class="pulse"></span>Diagnóstico de platô · 5 min</span>
       <h1>Por que você <span class="hl">parou de evoluir</span> (e não é falta de esforço)</h1>
       <p class="lead">
-        Treinar pesado e não ver mais resultado não é azar nem genética ruim. Quase sempre é um de 5 pontos que travaram sem você perceber. Lê cada um e <b>toca em "isso sou eu"</b> onde se reconhecer — no fim eu te digo o que isso significa.
+        Treinar pesado e não ver mais resultado não é azar nem genética ruim. Quase sempre é um de 5 pontos que travaram sem você perceber. Lê cada um e <b>toca em "isso sou eu"</b> onde se reconhecer. No fim eu te digo o que isso significa.
       </p>
       <span class="hint"><span class="tap">👆</span> Toque nos cartões conforme você lê</span>
     </header>
@@ -373,7 +390,7 @@ src="https://www.facebook.com/tr?id=264800457918824&ev=PageView&noscript=1"/></n
     <section class="sec reveal-up">
       <h2>O que é um platô (e por que ele aparece)</h2>
       <p>
-        Platô é o corpo dizendo que o estímulo virou rotina. Ele <b>já se adaptou ao que você faz</b>, então parou de mudar. Não é sinal de que você chegou no limite — é sinal de que algo precisa mudar no estímulo.
+        Platô é o corpo dizendo que o estímulo virou rotina. Ele <b>já se adaptou ao que você faz</b>, então parou de mudar. Não é sinal de que você chegou no limite, é sinal de que algo precisa mudar no estímulo.
       </p>
       <p>
         A boa notícia: platô tem causa, e causa tem conserto. O problema é que a maioria tenta resolver treinando <b>mais</b> quando o erro está em <b>outro lugar</b>.
@@ -407,7 +424,7 @@ src="https://www.facebook.com/tr?id=264800457918824&ev=PageView&noscript=1"/></n
           <button class="markbtn" type="button">
             <span class="box">✓</span>
             <span class="lbl-off">Isso sou eu</span>
-            <span class="lbl-on">Marcado — isso sou eu</span>
+            <span class="lbl-on">Marcado, é o meu caso</span>
           </button>
         </article>
 
@@ -425,7 +442,7 @@ src="https://www.facebook.com/tr?id=264800457918824&ev=PageView&noscript=1"/></n
           <button class="markbtn" type="button">
             <span class="box">✓</span>
             <span class="lbl-off">Isso sou eu</span>
-            <span class="lbl-on">Marcado — isso sou eu</span>
+            <span class="lbl-on">Marcado, é o meu caso</span>
           </button>
         </article>
 
@@ -443,7 +460,7 @@ src="https://www.facebook.com/tr?id=264800457918824&ev=PageView&noscript=1"/></n
           <button class="markbtn" type="button">
             <span class="box">✓</span>
             <span class="lbl-off">Isso sou eu</span>
-            <span class="lbl-on">Marcado — isso sou eu</span>
+            <span class="lbl-on">Marcado, é o meu caso</span>
           </button>
         </article>
 
@@ -456,12 +473,12 @@ src="https://www.facebook.com/tr?id=264800457918824&ev=PageView&noscript=1"/></n
               <span class="tag">Matéria-prima</span>
             </div>
           </div>
-          <p class="body">Sem matéria-prima — principalmente proteína — não tem o que construir. <b>"Comer bem" no olho quase nunca bate o que o corpo realmente precisa.</b> Treino é o estímulo; comida é o que vira resultado.</p>
+          <p class="body">Sem matéria-prima, principalmente proteína, não tem o que construir. <b>"Comer bem" no olho quase nunca bate o que o corpo realmente precisa.</b> Treino é o estímulo; comida é o que vira resultado.</p>
           <div class="selfcheck"><b>É o teu caso se:</b> você nunca contou a proteína do dia, come pouco no dia a dia, ou pula refeição e compensa tudo à noite.</div>
           <button class="markbtn" type="button">
             <span class="box">✓</span>
             <span class="lbl-off">Isso sou eu</span>
-            <span class="lbl-on">Marcado — isso sou eu</span>
+            <span class="lbl-on">Marcado, é o meu caso</span>
           </button>
         </article>
 
@@ -479,7 +496,7 @@ src="https://www.facebook.com/tr?id=264800457918824&ev=PageView&noscript=1"/></n
           <button class="markbtn" type="button">
             <span class="box">✓</span>
             <span class="lbl-off">Isso sou eu</span>
-            <span class="lbl-on">Marcado — isso sou eu</span>
+            <span class="lbl-on">Marcado, é o meu caso</span>
           </button>
         </article>
 
@@ -499,35 +516,40 @@ src="https://www.facebook.com/tr?id=264800457918824&ev=PageView&noscript=1"/></n
       <p class="verdict" id="verdict">Vai marcando "isso sou eu" nos cartões acima. No fim eu te digo o que o teu resultado significa.</p>
     </section>
 
-    <!-- REVELAÇÃO -->
-    <section class="author reveal-up">
-      <h2>Quem escreveu isso?</h2>
-      <p>
-        Sou <b>Lucas Lima</b>, personal trainer. Passo o dia ajudando aluno a sair exatamente desse ponto: o treino que era pra evoluir e empacou.
-      </p>
-      <p>
-        Esse diagnóstico aqui é a versão rápida — serve pra te dar direção. Quando a gente olha o teu caso de verdade, com os teus números, o teu treino e a tua rotina, dá pra apontar com precisão <b>qual ponto está te travando</b> e montar a saída na ordem certa, sem chute.
-      </p>
-      <p>
-        Pra ver o que mais faço: <a class="ig" href="https://instagram.com/personaltrainerlucaslima" target="_blank" rel="noopener">@personaltrainerlucaslima</a>.
-      </p>
-    </section>
-
-    <!-- OFFER — CONSULTORIA -->
+    <!-- OFFER — CONSULTORIA (logo abaixo do resultado) -->
     <section class="offer reveal-up">
-      <span class="oe">O próximo passo</span>
-      <h2>É exatamente isso que eu faço na consultoria</h2>
-      <ul class="benefits">
-        <li><b>Avaliação do teu treino, rotina e alimentação</b> pra achar o que realmente está travando — não no chute.</li>
-        <li><b>Treino montado pro teu nível</b>, objetivo e tempo real de vida.</li>
-        <li><b>Ajuste contínuo mês a mês</b> conforme você evolui — pra não empacar de novo no mesmo ponto.</li>
-        <li><b>Acompanhamento direto comigo.</b> Não é planilha solta nem app genérico.</li>
-      </ul>
+      <span class="oe">Quem escreveu isso</span>
+      <h2>Eu sou o Lucas Lima. Esse é o ponto onde eu entro.</h2>
+      <p class="offer-intro">
+        Passo o dia tirando aluno exatamente desse platô. O diagnóstico acima te deu a direção. A diferença real está no que vem depois dele, e é aqui que muda o jogo:
+      </p>
+
+      <div class="compare">
+        <div class="col col-now">
+          <span class="col-h">Sozinho, como hoje</span>
+          <ul>
+            <li>Monta o treino no achismo, quase o mesmo de sempre</li>
+            <li>Descobre o que travou tarde demais</li>
+            <li>Ajusta no escuro e torce pra dar certo</li>
+            <li>Motivação que vai e volta, sem ninguém cobrando</li>
+          </ul>
+        </div>
+        <div class="col col-cons">
+          <span class="col-h">Meus alunos de consultoria</span>
+          <ul>
+            <li>Treino montado pro caso real e progredido toda semana</li>
+            <li>Avaliação aponta o freio principal logo de cara</li>
+            <li>Ajuste mês a mês comigo do lado, sem chute</li>
+            <li>Alguém corrigindo e cobrando até virar hábito</li>
+          </ul>
+        </div>
+      </div>
+
       <a class="cta" href="https://ptlucaslima.pt/#consultoria" target="_blank" rel="noopener">
         <span>Quero destravar na consultoria</span><span class="arrow">→</span>
       </a>
       <p class="cta-sub">
-        Amanhã eu mostro a <b>consultoria por dentro</b> aqui no Instagram — fica de olho.
+        Amanhã eu mostro a <b>consultoria por dentro</b> aqui no Instagram, fica de olho.
       </p>
     </section>
 
@@ -542,7 +564,7 @@ src="https://www.facebook.com/tr?id=264800457918824&ev=PageView&noscript=1"/></n
     <!-- PS -->
     <div class="ps reveal-up">
       <span class="lbl">PS</span>
-      A consultoria tem <b>vaga limitada por mês</b> pra eu acompanhar cada aluno de perto. Se amanhã, quando eu mostrar tudo por dentro, fizer sentido pra você — já vai estar na frente. <a href="https://ptlucaslima.pt/#consultoria" target="_blank" rel="noopener">Ver a consultoria →</a>
+      A consultoria tem <b>vaga limitada por mês</b> pra eu acompanhar cada aluno de perto. Se amanhã, quando eu mostrar tudo por dentro, fizer sentido pra você, já vai estar na frente. <a href="https://ptlucaslima.pt/#consultoria" target="_blank" rel="noopener">Ver a consultoria →</a>
     </div>
 
     <footer>
@@ -583,10 +605,10 @@ src="https://www.facebook.com/tr?id=264800457918824&ev=PageView&noscript=1"/></n
   var verdicts={
     0:'Vai marcando "isso sou eu" nos cartões acima. No fim eu te digo o que o teu resultado significa.',
     1:'Você travou num ponto específico. <b>Boa notícia: dá pra destravar com o ajuste certo.</b> Um treino bem montado já resolve boa parte disso.',
-    2:'Dois freios ao mesmo tempo. Ainda dá pra atacar, mas <b>a ordem importa</b> — começar pelo ponto errado faz você girar em falso por semanas.',
-    3:'Três pontos puxando contra você. Aqui não é um ajuste solto que resolve — é <b>organizar o conjunto</b>: treino, recuperação e comida no mesmo sentido.',
+    2:'Dois freios ao mesmo tempo. Ainda dá pra atacar, mas <b>a ordem importa</b>: começar pelo ponto errado faz você girar em falso por semanas.',
+    3:'Três pontos puxando contra você. Aqui não é um ajuste solto que resolve, é <b>organizar o conjunto</b>: treino, recuperação e comida no mesmo sentido.',
     4:'Quatro freios juntos. O teu platô não é falta de esforço, é <b>falta de um plano que conecte tudo.</b> É exatamente o que eu monto na consultoria.',
-    5:'Os cinco ao mesmo tempo. Sério: <b>você não precisa treinar mais — precisa de direção.</b> Com o conjunto organizado, o teu corpo volta a responder rápido.'
+    5:'Os cinco ao mesmo tempo. Sério: <b>você não precisa treinar mais, precisa de direção.</b> Com o conjunto organizado, o teu corpo volta a responder rápido.'
   };
 
   function render(){
